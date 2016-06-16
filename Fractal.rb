@@ -10,17 +10,17 @@ class Fractal
   end
 
   def step
-    @new_squares = Array.new
+    new_squares = Array.new
     if @iterations % 2 == 0
       @squares.all? do |x|
-        @new_squares.concat (x.split(:horizontal))
+        new_squares.concat (x.split(:horizontal))
       end
     else
       @squares.all? do |x|
-        @new_squares.concat (x.split(:vertical))
+        new_squares.concat (x.split(:vertical))
       end
     end
-    @squares = @new_squares
+    @squares = new_squares
     @iterations += 1
   end
 end
